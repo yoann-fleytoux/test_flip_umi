@@ -2,7 +2,19 @@
 
 In [this paper](https://arxiv.org/html/2402.10329v3/), the authors suggest that *"digitally reflecting the crop of the images in the mirrors yields the best result for policy learning."* This repo contains a test setup to visualize and verify mirror flipping using the `get_mirror_crop_slices` utility.
 
-Check out `reflect.png` for a visual explanation of the effect.
+Check out the diagram below and `reflect.png` for a visual explanation of the effect.
+
+---
+
+## 🔍 Before and After
+
+### 🔹 `original.png`: Before Mirror Flip
+<img src="original.png" alt="Original image with colored rectangles" width="600"/>
+
+### 🔁 `result.png`: After Cropping, Flipping, and Swapping
+<img src="result.png" alt="Resulting image after swapping mirrored crops" width="600"/>
+
+---
 
 ## 🔧 Setup
 
@@ -13,6 +25,8 @@ pip install -r requirements.txt
 ```
 
 The `cv_util.py` file is sourced from the [Universal Manipulation Interface (UMI) repository](https://github.com/real-stanford/universal_manipulation_interface).
+
+---
 
 ## 🧪 Test Script Overview
 
@@ -31,7 +45,3 @@ It performs the following steps:
 3. **Crops and flips** each rectangle using `get_mirror_crop_slices` from `cv_util.py`.
 4. **Swaps the flipped regions** between left and right.
 5. **Saves the original and flipped images** for visual inspection (`original.png`, `result.png`).
-
-
-This setup makes it easy to verify that the flipping logic aligns with the theoretical intent described in the paper.
-
